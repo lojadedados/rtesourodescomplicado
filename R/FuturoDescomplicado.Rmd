@@ -1,0 +1,114 @@
+---
+title: "Futuro Descomplicado"
+author: "contato@futurodescomplicado.com.br"
+date: "`r Sys.Date()`"
+output:
+  #tufte::tufte_html: default
+    rmdformats::readthedown:
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: false
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Apresentação 
+
+"Futuro Descomplicado" é um conjunto de *aplicativos dinâmicos, inteligentes e voltados para plataforma Web* que irão responder uma questão extremamente relevante: __Qual(ais) a(s) melhor(es) estratégia(s) de investimento para alcançar um futuro financeiro tranquilo?__
+
+
+Os seguintes produtos compõe a solução "Futuro Descomplicado":
+
+- __Tesouro Descomplicado__: Aplicativo Inteligente que apresenta a evolução dos títulos do tesouro, o impacto da mudança das taxas envolvidas e a previsão de rentabilidade e melhor momento para investimento.
+- __Previdência Descomplicada__: Apresenta a evolução dos principais fundos de previdência assim como o impacto
+- __Bolsa Descomplicada__: Apresenta a evolução da Bolsa e das principais carteiras de investimento.
+- __Imoveis Descomplicados__: Apresenta a evolução dos indicadores econômicos do mercado de imóveis.
+- __Planejamento Descomplicado__: Relaciona todos os indicadores financeiros dos principais investimentos, apresentando a previsão de rentabilidade com base em premissas econômicas e mostrando para o pequeno investidor qual o melhor caminho para investir suas economias.
+
+# Público-alvo
+
+Pequenos e médios investidores com interesse em acompanhar a evolução do mercado e qual a melhor decisão de investimento para cada momento
+
+# A inteligência 
+
+Todas as decisões serão tomadas com dados capturados em tempo real. As premissas adotadas serão apresentadas em cada aplicativo, possibilitando ao participante compreender as decisões tomadas;
+
+__A atualização dos dados é feita em tempo real!__
+
+Optamos por utilizar a linguagem de *data science* R (<https://cran.r-project.org/>) para estruturar a informação e utilizar soluções bem consolidas de visualização e analises exploratórias, inferenciais e preditivas para apoio à tomada de decisão.
+
+A interface Web garante o acesso em várias plataformas. O ambiente de Nuvem com alta disponibilidade e velocidade garante que a informação estará disponível 24x7.
+
+
+# Premissas e Restrições
+  + Os dados utilizados no App estarão disponíeis através de fontes de dados abertos (Estruturados e semi estruturados)
+  + Todas as informações que tomamos para a visualização estarão disponíveis e de fácil acesso para todos os nossos clientes.
+  + Analise exploratória das informações disponíveis será feita para apoiar a decisão e garantir a disponibilidade da informação para a população, no tempo e acurácia necessárias para tomada de decisão. Toda análise que antecede a criação dos produtos estará disponível e será útil na contextualização da solução.
+
+
+# Estruturação da Solução
+
+## Dados
+
+* Dados disponíveis nas seguintes fontes:
+  + Dados Abertos do Tesouro Nacional: <http://www.tesourotransparente.gov.br/index.php/dados-abertos> 
+  + Dados Abertos do Governo Federal: <http://dados.gov.br/dataset/search>
+  + Dados do IBGE: <http://www.ibge.gov.br/home/default.php>
+  + Dados do IPEA: <http://www.ipeadata.gov.br/>
+  + Séries Históricas do Banco Central: <https://www3.bcb.gov.br/sgspub/>
+  + Banco de Dados Imobiliarios da CBIC: <http://www.cbicdados.com.br/menu/mercado-imobiliario/mercado-imobiliario>
+  + Dados da IBOVESPA: <http://www.bmfbovespa.com.br/pt_br/servicos/market-data/cotacoes/>
+  + Demais fontes de informação (Mídia especializada, Consultores, ...)
+  
+
+## Tecnologia e Infraestrutura
+
+* Disponibilização em Nuvem com tecnologia específica com contrato de alta disponibilidade e alta performance (Disponibilidade 24x7)
+* Desenvolvimento baseado na linguagem estatística R
+* Visualização de Dados com tecnologia Web (HTML 5 + CSS 3 + Javascript)
+
+* Desenvolvimento baseado em 3 etapas:
+
+1. Analise Exploratória dos dados disponíveis, com objetivo de compreender se a informação disponível responde os questionamentos.
+
+2. Obtenção das informações e organização através de pacote de informações 
+
+3. Visualização da informação em Plataforma Web.
+
+4. Aprendizado dos resultados e evolução da solução 
+
+# Exemplo: Avaliação Tesouro IPCA+ 2024
+
+## Contexto
+
+ * A edição do Jornal da Globo de 19/10/2016 trouxe a seguinte manchete: "Taxa básica de juros tem a 1ª queda em quatro anos" <http://g1.globo.com/jornal-da-globo/noticia/2016/10/taxa-basica-de-juros-tem-1-queda-em-quatro-anos.html>
+
+
+* Desde agosto de 2012 a taxa básica de juros não caía. Ela tinha ficado estável em 7,25% até chegar a 14,25%. No dia 19/10/2016 o  Copom reduziu a taxa Selic em 0,25 ponto percentual, para 14%.
+
+* Questão: Qual o impacto dessa decisão para o pequeno investidor que possui títulos do tesouro Selic (LFT)? E para o investidor que possui Tesouro Prefixado (LTN)? 
+
+```{r echo=FALSE}
+#s <- AnaliseEstabelecimentos()
+
+```
+
+## Pacote R 
+
+Descrever pacote
+
+## Visualização 
+
+Descrever pacote
+
+## Decisões
+
+Descrever pacote
+
+# Próximos Passos
+
+Descrever pacote

@@ -1,0 +1,14 @@
+
+
+# Para criar um grafico: Copiar e colar as linhas abaixo no console
+
+precotaxatesourodireto <- read.csv2("data/precotaxatesourodireto.csv", sep = ",")
+janelaCurta = 10
+janelaLonga = 100
+tipoInfo = "PU.Base.Manha"
+tituloPublico <- "Tesouro IPCA+"
+dataVencimento <- "15/08/2024"
+
+getGrafico(tituloPublico,dataVencimento,janelaLonga,janelaCurta,tipoInfo)
+
+

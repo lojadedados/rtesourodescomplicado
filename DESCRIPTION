@@ -1,0 +1,15 @@
+Package: rtesourodescomplicado
+Type: Package
+Title: Consolida informacoes relacionadas ao tesouro direto
+Version: 0.1.0
+Author: Rodrigo Almeida dos Santos <rodrigo@lojadedados.com.br>
+Maintainer: Rodrigo Almeida dos Santos <rodrigo@lojadedados.com.br>
+Description: Consolida informacoes relacionadas ao tesouro direto.
+License: Nao se aplica
+Depends:
+    dplyr,
+    dygraphs,
+    xts,
+    TTR
+LazyData: TRUE
+RoxygenNote: 5.0.1
