@@ -8,7 +8,6 @@ janelaLonga = 100
 tipoInfo = "PU.Base.Manha"
 tituloPublico <- "Tesouro IPCA+"
 dataVencimento <- "15/08/2024"
-
 getGrafico(tituloPublico,dataVencimento,janelaLonga,janelaCurta,tipoInfo)
 
 
