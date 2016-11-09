@@ -83,6 +83,10 @@ dataVencimento <- "15/08/2024"
 getGrafico(tituloPublico,dataVencimento,janelaLonga,janelaCurta,tipoInfo)
 ```
 
+![Tesouro Descomplicado View 1](https://github.com/lojadedados/rtesourodescomplicado/blob/master/img/tdvis.png)
+
+
+
 ## Documentação
 
 Veja o website do pacote para informações adicionais e aplicativos que consomem o pacote: <https://github.com/lojadedados/RTesouroDescomplicado>
