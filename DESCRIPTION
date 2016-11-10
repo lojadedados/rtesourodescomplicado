@@ -10,6 +10,10 @@ Depends:
     dplyr,
     dygraphs,
     xts,
-    TTR
+    TTR,
+    htmlwidgets,
+    shiny,
+    sendmailR,
+    log4r
 LazyData: TRUE
 RoxygenNote: 5.0.1
