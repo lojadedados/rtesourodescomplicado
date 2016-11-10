@@ -11,9 +11,6 @@ Depends:
     dygraphs,
     xts,
     TTR,
-    htmlwidgets,
-    shiny,
-    sendmailR,
-    log4r
+    htmlwidgets
 LazyData: TRUE
 RoxygenNote: 5.0.1
