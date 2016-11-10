@@ -4,17 +4,8 @@
 #' @export
 getData <- function() {
 
-  if (!exists("dataCarregamentoTesouroDireto")) {
+    dataCarregamentoTesouroDireto <<- format(Sys.Date(), "%d/%m/%Y %H:%M")
 
-    dataCarregamentoTesouroDireto <<- Sys.Date()
-  }
-
-  if ( !exists("precotaxatesourodireto") ) {
-
-    dataCarregamentoTesouroDireto <<- Sys.Date()
-    precotaxatesourodireto <- read.csv2("data/precotaxatesourodireto.csv", sep = ",")
-  }
-
-  precotaxatesourodireto
+    read.csv2("data/precotaxatesourodireto.csv", sep = ",")
 }
 
