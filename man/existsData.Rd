@@ -7,10 +7,10 @@
 existsData()
 }
 \value{
-TRUE if
+TRUE se já existe localmente os dados do Tesouro Direto, FALSE caso contrário
 }
 \description{
-Funcao para verificar se já existe localmente os dados do tesouro direto que estao na pasta data com o nome 'precotaxatesourodireto.csv'
+Funcao para verificar se já existe localmente os dados do Tesouro Direto que estão na pasta data com o nome 'precotaxatesourodireto.csv'
 }
 \author{
 Filipe Marques

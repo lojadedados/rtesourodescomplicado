@@ -4,7 +4,7 @@
 \alias{getTitulosPublicos}
 \title{getTitulosPublicos}
 \usage{
-retorna nome dos titulos para Consulta
+retorna nome dos títulos para Consulta
 }
 \arguments{
 \item{dadosTesouro:}{Dados do tesouro lidos a partir da planilha csv 'precotaxatesourodireto.csv'}
@@ -13,12 +13,12 @@ retorna nome dos titulos para Consulta
 os dados vem da seguinte url: http://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto
 
 Retorna data.frame com as datas de vencimento dos papeis LFT, LTN, NTN-F, NTN-B Principal, NTN-B, NTN-C
-LFT: Tesouro Selic
-LTN: Tesouro Prefixado
-NTN-F: Tesouro Prefixado com Juros Semestrais
-NTN-B Principal: Tesouro IPCA
-NTN-B: Tesouro IPCA com Juros Semestrais
-NTN-C: T�tulos vinculados ao IGPM
+LFT: Selic
+LTN: Prefixado
+NTN-F: Prefixado com Juros Semestrais
+NTN-B Principal: IPCA
+NTN-B: IPCA com Juros Semestrais
+NTN-C: Títulos vinculados ao IGPM
 }
 \author{
 Rodrigo Almeida

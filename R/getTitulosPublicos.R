@@ -20,7 +20,7 @@ getTitulosPublicos <- function() {
   # [5] "Tesouro Prefixado com Juros Semestrais" "Tesouro Selic"
   titulosPublicos <- levels(precotaxatesourodireto$Tipo.Titulo)
 
-  # removendo a palavra 'Tesouro ' repetida desnecessarimento
+  # removendo a palavra 'Tesouro ' repetida desnecessarimente
   as.array(gsub("Tesouro ", "", titulosPublicos))
 
 }

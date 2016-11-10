@@ -7,9 +7,9 @@
 getGrafico(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo)
 }
 \arguments{
-\item{janelaLonga}{de avaliação da media movel exponencial}
+\item{janelaLonga}{de avaliaÃ§Ã£o da media movel exponencial}
 
-\item{janelaCurta}{de avaliação da media movel exponencial}
+\item{janelaCurta}{de avaliaÃ§Ã£o da media movel exponencial}
 
 \item{tituloPublico:}{Titulo Publico}
 

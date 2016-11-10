@@ -1,11 +1,11 @@
-#' @title getXTSTD Recupera DADOS no formato XTS para visualiza??o
+#' @title getXTSTD Recupera DADOS no formato XTS para visualização
 #' @author Rodrigo Almeida
 #' @import xts TTR
 #' @usage retorna nome dos titulos para Consulta
 #' @param tituloPublico: Titulo Publico
 #' @param dataVencimento: Data de vencimento do titulo
-#' @param janelaLonga de avalia??o da media movel exponencial
-#' @param janelaCurta de avalia??o da media movel exponencial
+#' @param janelaLonga de avaliação da media movel exponencial
+#' @param janelaCurta de avaliação da media movel exponencial
 #' @param tipoInfo: Um dos seguintes: Taxa.Compra.Manha, Taxa.Venda.Manha, PU.Compra.Manha, PU.Venda.Manha, PU.Base.Manha
 getXTSTD <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo) {
 

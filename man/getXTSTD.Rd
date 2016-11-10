@@ -2,14 +2,14 @@
 % Please edit documentation in R/getXTSTD.R
 \name{getXTSTD}
 \alias{getXTSTD}
-\title{getXTSTD Recupera DADOS no formato XTS para visualização}
+\title{getXTSTD Recupera DADOS no formato XTS para visualizaÃ§Ã£o}
 \usage{
 retorna nome dos titulos para Consulta
 }
 \arguments{
-\item{janelaLonga}{de avaliação da media movel exponencial}
+\item{janelaLonga}{de avaliaÃ§Ã£o da media movel exponencial}
 
-\item{janelaCurta}{de avaliação da media movel exponencial}
+\item{janelaCurta}{de avaliaÃ§Ã£o da media movel exponencial}
 
 \item{tituloPublico:}{Titulo Publico}
 
