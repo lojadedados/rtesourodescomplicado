@@ -5,8 +5,8 @@
 #' @import dygraphs
 #' @param tituloPublico: Titulo Publico
 #' @param dataVencimento: Data de vencimento do titulo
-#' @param janelaLonga de avaliação da media movel exponencial
-#' @param janelaCurta de avaliação da media movel exponencial
+#' @param janelaLonga de avaliaÃ§Ã£o da media movel exponencial
+#' @param janelaCurta de avaliaÃ§Ã£o da media movel exponencial
 #' @param tipoInfo: Um dos seguintes: Taxa.Compra.Manha, Taxa.Venda.Manha, PU.Compra.Manha, PU.Venda.Manha, PU.Base.Manha
 getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo ) {
       saida  <- getXTSTD(tituloPublico,
@@ -15,11 +15,11 @@ getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, 
                        janelaCurta,
                        tipoInfo)
 
-      labelGraficoY2 = paste(" + Media Movel Exponencial com Janela de",janelaCurta,"e",janelaLonga,"dias",sep = " ")
+      labelGraficoY2 = paste(" + MMEs de ",janelaCurta," e ",janelaLonga," dias",sep = " ")
       tituloGrafico = paste(tituloPublico, dataVencimento,labelGraficoY2, sep = " ")
 
 
-      labelInfo <- switch (tipoInfo,
+      labelInfo <- switch(tipoInfo,
                                  Taxa.Compra.Manha = "Taxa de Compra Manha",
                                  Taxa.Venda.Manha = "Taxa de Venda Manha",
                                  PU.Compra.Manha = "Preco Unitario de Compra Manha",
@@ -28,7 +28,7 @@ getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, 
       )
 
 
-      labelResumida <- switch (tipoInfo,
+      labelResumida <- switch(tipoInfo,
                            Taxa.Compra.Manha = "Taxa de Compra",
                            Taxa.Venda.Manha = "Taxa de Venda",
                            PU.Compra.Manha = "Compra",
@@ -40,8 +40,8 @@ getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, 
         dyAxis("y", label = labelInfo, valueRange = c(1300, 2000)) %>%
         dyAxis("y2", label = labelGraficoY2, valueRange = c(1300, 2000)) %>%
         dySeries("Data.Apresentada", label = labelResumida) %>%
-        dySeries("EMALonga", label = "Media Movel Longa (100 dias)") %>%
-        dySeries("EMACurta", label = "Media Movel Curta (10 dias)") %>%
+        dySeries("EMALonga", label = paste("MME ", janelaLonga)) %>%
+        dySeries("EMACurta", label = paste("MME ", janelaCurta)) %>%
         dyOptions(drawPoints = TRUE, pointSize = 2,axisLineWidth = 1.5, fillGraph = TRUE, drawGrid = TRUE) %>%
         dyRangeSelector(dateWindow = c("2015-01-12", "2016-11-01")) %>%
         dyLegend(show = "follow", width = 200) %>%
