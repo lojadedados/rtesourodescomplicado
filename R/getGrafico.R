@@ -37,8 +37,8 @@ getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, 
       )
 
       dygraph(saida, main = tituloGrafico, group = "TD") %>%
-        dyAxis("y", label = labelInfo, valueRange = c(1300, 2000)) %>%
-        dyAxis("y2", label = labelGraficoY2, valueRange = c(1300, 2000)) %>%
+        dyAxis("y", label = labelInfo, valueRange = c(500, 2000)) %>%
+        dyAxis("y2", label = labelGraficoY2, valueRange = c(500, 2000)) %>%
         dySeries("Data.Apresentada", label = labelResumida) %>%
         dySeries("EMALonga", label = paste("MME ", janelaLonga)) %>%
         dySeries("EMACurta", label = paste("MME ", janelaCurta)) %>%

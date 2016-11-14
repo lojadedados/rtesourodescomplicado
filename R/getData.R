@@ -6,6 +6,11 @@ getData <- function() {
 
     dataCarregamentoTesouroDireto <<- format(Sys.Date(), "%d/%m/%Y %H:%M")
 
-    read.csv2("data/precotaxatesourodireto.csv", sep = ",")
+    tdData <- read.csv2("data/precotaxatesourodireto.csv", sep = ",")
+    
+    Tipo.Titulo.Abreviado <- abreviaNomeTitulos(tdData$Tipo.Titulo)
+    
+    cbind(tdData, Tipo.Titulo.Abreviado)
+    
 }
 
