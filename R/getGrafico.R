@@ -8,12 +8,40 @@
 #' @param janelaLonga de avaliação da media movel exponencial
 #' @param janelaCurta de avaliação da media movel exponencial
 #' @param tipoInfo: Um dos seguintes: Taxa.Compra.Manha, Taxa.Venda.Manha, PU.Compra.Manha, PU.Venda.Manha, PU.Base.Manha
-getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo ) {
-      saida  <- getXTSTD(tituloPublico,
-                       dataVencimento,
+#' @param dataLimiteInferiorEixoX: data Limite Inferior a ser apresentada no Eixo X
+#' @param dataLimiteSuperiorEixoX: data Limite Superior a ser apresentada no Eixo X
+getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo, dataLimiteInferiorEixoX = "01/01/2015", dataLimiteSuperiorEixoX = "15/11/2016") {
+
+        # recupera a informacao
+        precotaxatesourodireto <- getData()
+
+
+        # data inferior de referencia para range do eixo X (por padrao 01/01/2015)
+        dtLimiteInferior <- as.Date(dataLimiteInferiorEixoX, format = "%d/%m/%Y")
+
+        # data superior de referencia para range do eixo X (por padrao 15/11/2016)
+        dtLimiteSuperior <- as.Date(dataLimiteSuperiorEixoX, format = "%d/%m/%Y")
+
+
+        #recupera o valor do titulo para toda a distribuicao
+        titulo <- filter(precotaxatesourodireto, Tipo.Titulo == tituloPublico &
+                             Data.Vencimento == dataVencimento &
+                             as.Date(as.character(Data.Base), format = "%d/%m/%Y") > dtLimiteInferior)
+
+        # Informacao que sera plotada no grafico
+        infoApresentada <- switch (tipoInfo,
+                                     Taxa.Compra.Manha = titulo$Taxa.Compra.Manha,
+                                     Taxa.Venda.Manha = titulo$Taxa.Venda.Manha,
+                                     PU.Compra.Manha = titulo$PU.Compra.Manha,
+                                     PU.Venda.Manha = titulo$PU.Venda.Manha,
+                                     PU.Base.Manha = titulo$PU.Base.Manha
+          )
+
+        # Serie Temporal para o Grafico
+       saida  <- getXTSTD(titulo$Data.Base,
+                       infoApresentada,
                        janelaLonga,
-                       janelaCurta,
-                       tipoInfo)
+                       janelaCurta)
 
       labelGraficoY2 = paste(" + MMEs de ",janelaCurta," e ",janelaLonga," dias",sep = " ")
       tituloGrafico = paste(tituloPublico, dataVencimento,labelGraficoY2, sep = " ")
@@ -37,13 +65,13 @@ getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, 
       )
 
       dygraph(saida, main = tituloGrafico, group = "TD") %>%
-        dyAxis("y", label = labelInfo, valueRange = c(500, 2000)) %>%
-        dyAxis("y2", label = labelGraficoY2, valueRange = c(500, 2000)) %>%
+        dyAxis("y", label = labelInfo, valueRange = getYRange(infoApresentada)) %>%
+        dyAxis("y2", label = labelGraficoY2, valueRange = getYRange(infoApresentada)) %>%
         dySeries("Data.Apresentada", label = labelResumida) %>%
         dySeries("EMALonga", label = paste("MME ", janelaLonga)) %>%
         dySeries("EMACurta", label = paste("MME ", janelaCurta)) %>%
         dyOptions(drawPoints = TRUE, pointSize = 2,axisLineWidth = 1.5, fillGraph = TRUE, drawGrid = TRUE) %>%
-        dyRangeSelector(dateWindow = c("2015-01-12", "2016-11-01")) %>%
+        dyRangeSelector(dateWindow = c(dtLimiteInferior, dtLimiteSuperior)) %>%
         dyLegend(show = "follow", width = 200) %>%
         dyHighlight(highlightSeriesOpts = list(strokeWidth = 1))
 }
