@@ -5,6 +5,6 @@
 #' @export
 existsData <- function() {
 
-  exists("data/precotaxatesourodireto.csv")
+  file.exists("data/precotaxatesourodireto.csv")
 
 }

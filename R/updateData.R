@@ -16,7 +16,7 @@ updateData <- function() {
     dir.create(path = dataDir, showWarnings = FALSE, mode = "777")
   }
 
-  write.csv(x = s, file = "data/precotaxatesourodireto.csv", sep = ",")
+  write.csv(x = s, file = file("data/precotaxatesourodireto.csv", open = "wt"), sep = ",")
 
   format(Sys.Date(), "%d/%m/%Y %H:%M")
 }

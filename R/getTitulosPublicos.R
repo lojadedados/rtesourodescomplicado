@@ -13,17 +13,20 @@
 #' @param nomesAbreviados: True se a função deve retornar os nomes dos títulos de forma abreviada (exemplo: "Semestrais" -> "Sem."), FALSE caso contrário.
 #' @param dadosTesouro: Dados do tesouro lidos a partir da planilha csv 'precotaxatesourodireto.csv'
 getTitulosPublicos <- function(nomesAbreviados = TRUE) {
-  precotaxatesourodireto <- getData()
-  # [1] "Tesouro IGPM+ com Juros Semestrais"     "Tesouro IPCA+"
-  # [3] "Tesouro IPCA+ com Juros Semestrais"     "Tesouro Prefixado"
-  # [5] "Tesouro Prefixado com Juros Semestrais" "Tesouro Selic"
-  retorno <- tituloPublico <- paste(precotaxatesourodireto$Tipo.Titulo, precotaxatesourodireto$Data.Vencimento)
+  precotaxatesourodireto <- getData(updateDataSeNaoDisponivel = TRUE)
 
+  # adicionando a coluna de nome completo concatenada com data de vencimento
+  retorno <- tituloPublico <- paste(precotaxatesourodireto$Tipo.Titulo, precotaxatesourodireto$Data.Vencimento)
 
   if (isTRUE(nomesAbreviados)) {
     tituloPublicoAbreviado <- abreviaNomeTitulos(tituloPublico)
 
+    # adicionando a coluna nome abreviado concatenada com data de vencimento
     retorno <- data.frame(tituloPublico, tituloPublicoAbreviado)
   }
+
+  # Adicionando a coluna de data de vencimento
+  retorno$Data.Vencimento <- precotaxatesourodireto$Data.Vencimento
+
   unique(retorno)
 }

@@ -4,7 +4,10 @@
 \alias{getData}
 \title{get data}
 \usage{
-getData()
+getData(updateDataSeNaoDisponivel = FALSE)
+}
+\arguments{
+\item{updateDataSeNaoDisponivel:}{TRUE se deseja fazer download do arquivo de dados caso o mesmo não esteja disponível, FALSE caso o arquivo já esteja disponível.}
 }
 \description{
 Funcao para recuperar dados do tesouro direto que estao na pasta data com o nome 'precotaxatesourodireto.csv'
