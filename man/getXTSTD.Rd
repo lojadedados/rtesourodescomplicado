@@ -11,11 +11,9 @@ retorna nome dos titulos para Consulta
 
 \item{janelaCurta}{de avaliação da media movel exponencial}
 
-\item{tituloPublico:}{Titulo Publico}
+\item{dataBase:}{Data Base do Titulo Publico (serie temporal)}
 
-\item{dataVencimento:}{Data de vencimento do titulo}
-
-\item{tipoInfo:}{Um dos seguintes: Taxa.Compra.Manha, Taxa.Venda.Manha, PU.Compra.Manha, PU.Venda.Manha, PU.Base.Manha}
+\item{infoApresentada:}{Um dos seguintes: Taxa.Compra.Manha, Taxa.Venda.Manha, PU.Compra.Manha, PU.Venda.Manha, PU.Base.Manha}
 }
 \author{
 Rodrigo Almeida

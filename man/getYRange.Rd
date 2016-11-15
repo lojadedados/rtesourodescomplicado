@@ -7,10 +7,10 @@
 retorna intervalo que sera apresentado no eixo Y
 }
 \arguments{
-\item{serieTemporal:}{Serie Temporal no formato XTS que sera plotada no grafico}
+\item{infoApresentada:}{Informacao Apresentada na Serie}
 }
 \value{
-intervaloY: Intervalo
+intervaloY: Intervalo do Eixo Y
 }
 \author{
 Rodrigo Almeida

@@ -4,7 +4,9 @@
 \alias{getGrafico}
 \title{getGrafico}
 \usage{
-getGrafico(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo)
+getGrafico(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo,
+  dataLimiteInferiorEixoX = "01/01/2015",
+  dataLimiteSuperiorEixoX = "15/11/2016")
 }
 \arguments{
 \item{janelaLonga}{de avaliação da media movel exponencial}
@@ -16,6 +18,10 @@ getGrafico(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo)
 \item{dataVencimento:}{Data de vencimento do titulo}
 
 \item{tipoInfo:}{Um dos seguintes: Taxa.Compra.Manha, Taxa.Venda.Manha, PU.Compra.Manha, PU.Venda.Manha, PU.Base.Manha}
+
+\item{dataLimiteInferiorEixoX:}{data Limite Inferior a ser apresentada no Eixo X}
+
+\item{dataLimiteSuperiorEixoX:}{data Limite Superior a ser apresentada no Eixo X}
 }
 \description{
 Funcao para geracao de grafico do Tesouro
