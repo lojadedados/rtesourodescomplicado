@@ -18,5 +18,5 @@ updateData <- function() {
 
   write.table(x = s, file = file("data/precotaxatesourodireto.csv", open = "wt"), sep = ",")
 
-  format(Sys.Date(), "%d/%m/%Y %H:%M")
+  format(Sys.time(), "%d/%m/%Y %R")
 }

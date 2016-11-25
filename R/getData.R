@@ -21,6 +21,14 @@ getData <- function(updateDataSeNaoDisponivel = FALSE) {
 
     tdData <- read.csv2("data/precotaxatesourodireto.csv", sep = ",")
 
+    #TODO fazer mesmo para a Data.Vencimento
+    #TODO verificar se em algum outro local, utilizamos data de forma errada
+    tdData$Data.Base <- as.POSIXct(strptime(x = as.character(tdData$Data.Base), format = "%d/%m/%Y"))
+
+    #ordenando pela data Base
+    tdData <- tdData[order(tdData$Data.Base),]
+
+
     Tipo.Titulo.Abreviado <- abreviaNomeTitulos(tdData$Tipo.Titulo)
 
     cbind(tdData, Tipo.Titulo.Abreviado)

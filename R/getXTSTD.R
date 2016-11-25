@@ -12,17 +12,16 @@ getXTSTD <- function(dataBase, infoApresentada, janelaLonga, janelaCurta) {
   # http://www.tororadar.com.br/investimento/analise-tecnica/medias-moveis
 
   ratioLonga <- 2/(janelaLonga + 1)
-  saidaEMALonga <- EMA(infoApresentada, n = janelaLonga, ratio = 1/2)
+  saidaEMALonga <- EMA(infoApresentada, n = janelaLonga)
 
   ratioCurta <- 2/(janelaCurta + 1)
-  saidaEMACurta <- EMA(infoApresentada, n = janelaCurta, ratio = 1/2)
+  saidaEMACurta <- EMA(infoApresentada, n = janelaCurta)
 
-  Data.Base <- as.POSIXct(strptime(x = as.character(dataBase), format = "%d/%m/%Y"))
   Data.Apresentada <- as.factor(infoApresentada)
   EMALonga <- as.numeric(saidaEMALonga)
   EMACurta <- as.numeric(saidaEMACurta)
 
-  resultado <- data.frame(Data.Base,Data.Apresentada,EMALonga,EMACurta)
+  resultado <- data.frame(dataBase,Data.Apresentada,EMALonga,EMACurta)
 
   saida <- xts(x = resultado[,-1], order.by = resultado[,1])
   saida

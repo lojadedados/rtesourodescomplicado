@@ -26,7 +26,7 @@ getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, 
         #recupera o valor do titulo para toda a distribuicao
         titulo <- filter(precotaxatesourodireto, Tipo.Titulo == tituloPublico &
                              Data.Vencimento == dataVencimento &
-                             as.Date(as.character(Data.Base), format = "%d/%m/%Y") > dtLimiteInferior)
+                             as.Date(as.character(Data.Base), format = "%Y-%m-%d") > dtLimiteInferior)
 
         # Informacao que sera plotada no grafico
         infoApresentada <- switch (tipoInfo,
@@ -37,41 +37,42 @@ getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, 
                                      PU.Base.Manha = titulo$PU.Base.Manha
           )
 
+
         # Serie Temporal para o Grafico
-       saida  <- getXTSTD(titulo$Data.Base,
+        saida  <- getXTSTD(titulo$Data.Base,
                        infoApresentada,
                        janelaLonga,
                        janelaCurta)
 
-      labelGraficoY2 = paste(" + MMEs de ",janelaCurta," e ",janelaLonga," dias",sep = " ")
-      tituloGrafico = paste(tituloPublico, dataVencimento,labelGraficoY2, sep = " ")
+        labelGraficoY2 = paste(" + MMEs de ",janelaCurta," e ",janelaLonga," dias",sep = " ")
+        tituloGrafico = paste(tituloPublico, dataVencimento,labelGraficoY2, sep = " ")
 
 
-      labelInfo <- switch(tipoInfo,
-                                 Taxa.Compra.Manha = "Taxa de Compra Manha",
-                                 Taxa.Venda.Manha = "Taxa de Venda Manha",
-                                 PU.Compra.Manha = "Preco Unitario de Compra Manha",
-                                 PU.Venda.Manha = "Preco Unitario de Venda Manha",
-                                 PU.Base.Manha = "Preco Unitario Base (Manha)"
-      )
+        labelInfo <- switch(tipoInfo,
+                                   Taxa.Compra.Manha = "Taxa de Compra Manha",
+                                   Taxa.Venda.Manha = "Taxa de Venda Manha",
+                                   PU.Compra.Manha = "Preco Unitario de Compra Manha",
+                                   PU.Venda.Manha = "Preco Unitario de Venda Manha",
+                                   PU.Base.Manha = "Preco Unitario Base (Manha)"
+        )
 
 
-      labelResumida <- switch(tipoInfo,
-                           Taxa.Compra.Manha = "Taxa de Compra",
-                           Taxa.Venda.Manha = "Taxa de Venda",
-                           PU.Compra.Manha = "Compra",
-                           PU.Venda.Manha = "Venda",
-                           PU.Base.Manha = "Base"
-      )
+        labelResumida <- switch(tipoInfo,
+                             Taxa.Compra.Manha = "Taxa de Compra",
+                             Taxa.Venda.Manha = "Taxa de Venda",
+                             PU.Compra.Manha = "Compra",
+                             PU.Venda.Manha = "Venda",
+                             PU.Base.Manha = "Base"
+        )
 
-      dygraph(saida, main = tituloGrafico, group = "TD") %>%
-        dyAxis("y", label = labelInfo, valueRange = getYRange(infoApresentada)) %>%
-        dyAxis("y2", label = labelGraficoY2, valueRange = getYRange(infoApresentada)) %>%
-        dySeries("Data.Apresentada", label = labelResumida) %>%
-        dySeries("EMALonga", label = paste("MME ", janelaLonga)) %>%
-        dySeries("EMACurta", label = paste("MME ", janelaCurta)) %>%
-        dyOptions(drawPoints = TRUE, pointSize = 2,axisLineWidth = 1.5, fillGraph = TRUE, drawGrid = TRUE) %>%
-        dyRangeSelector(dateWindow = c(dtLimiteInferior, dtLimiteSuperior)) %>%
-        dyLegend(show = "follow", width = 200) %>%
-        dyHighlight(highlightSeriesOpts = list(strokeWidth = 1))
+        dygraph(saida, main = tituloGrafico, group = "TD") %>%
+          dyAxis("y", label = labelInfo, valueRange = getYRange(infoApresentada)) %>%
+          dyAxis("y2", label = labelGraficoY2, valueRange = getYRange(infoApresentada)) %>%
+          dySeries("Data.Apresentada", label = labelResumida) %>%
+          dySeries("EMALonga", label = paste("MME ", janelaLonga)) %>%
+          dySeries("EMACurta", label = paste("MME ", janelaCurta)) %>%
+          dyOptions(drawPoints = TRUE, pointSize = 2,axisLineWidth = 1.5, fillGraph = TRUE, drawGrid = TRUE) %>%
+          dyRangeSelector(dateWindow = c(dtLimiteInferior, dtLimiteSuperior)) %>%
+          dyLegend(show = "follow", width = 200) %>%
+          dyHighlight(highlightSeriesOpts = list(strokeWidth = 1))
 }
