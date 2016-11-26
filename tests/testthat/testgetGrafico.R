@@ -12,7 +12,7 @@ test_that("Testando a recuperacao de Dados de Precos com o Metodo getGrafico", {
   janelaLonga = 100
   tipoInfo = "PU.Base.Manha"
   tituloPublico <- "Tesouro IPCA+"
-  dataVencimento <- "15/08/2024"
+  dataVencimento <- "2024-08-15"
 
   s <- getGrafico(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo)
 

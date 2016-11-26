@@ -4,25 +4,25 @@
 #' @export
 #' @import dygraphs
 #' @param tituloPublico: Titulo Publico
-#' @param dataVencimento: Data de vencimento do titulo
+#' @param dataVencimento: Data de vencimento do titulo (formato format = "%Y-%m-%d")
 #' @param janelaLonga de avaliação da media movel exponencial
 #' @param janelaCurta de avaliação da media movel exponencial
 #' @param tipoInfo: Um dos seguintes: Taxa.Compra.Manha, Taxa.Venda.Manha, PU.Compra.Manha, PU.Venda.Manha, PU.Base.Manha
-#' @param dataLimiteInferiorEixoX: data Limite Inferior a ser apresentada no Eixo X
-#' @param dataLimiteSuperiorEixoX: data Limite Superior a ser apresentada no Eixo X
-getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo, dataLimiteInferiorEixoX = "01/01/2015", dataLimiteSuperiorEixoX = "15/11/2016") {
+#' @param dataLimiteInferiorEixoX: data Limite Inferior a ser apresentada no Eixo X (formato format = "%Y-%m-%d")
+#' @param dataLimiteSuperiorEixoX: data Limite Superior a ser apresentada no Eixo X (formato format = "%Y-%m-%d")
+getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo, dataLimiteInferiorEixoX = "2015-01-01", dataLimiteSuperiorEixoX = "2016-11-15") {
 
         # recupera a informacao
         precotaxatesourodireto <- getData()
 
         # padronizando o uso das datas como asDate
-        dataVencimento <- as.Date(dataVencimento, format = "%d/%m/%Y")
+        dataVencimento <- as.Date(dataVencimento, format = "%Y-%m-%d")
 
         # data inferior de referencia para range do eixo X (por padrao 01/01/2015)
-        dtLimiteInferior <- as.Date(dataLimiteInferiorEixoX, format = "%d/%m/%Y")
+        dtLimiteInferior <- as.Date(dataLimiteInferiorEixoX, format = "%Y-%m-%d")
 
         # data superior de referencia para range do eixo X (por padrao 15/11/2016)
-        dtLimiteSuperior <- as.Date(dataLimiteSuperiorEixoX, format = "%d/%m/%Y")
+        dtLimiteSuperior <- as.Date(dataLimiteSuperiorEixoX, format = "%Y-%m-%d")
 
         # as.Date(as.character(Data.Base), format = "%Y-%m-%d")
         #recupera o valor do titulo para toda a distribuicao

@@ -7,13 +7,20 @@ janelaCurta = 12
 janelaLonga = 26
 tipoInfo = "PU.Base.Manha"
 tituloPublico <- "Tesouro IPCA+"
-dataVencimento <- "15/08/2024"
+dataVencimento <- "2024-08-15"
 getGrafico(tituloPublico,dataVencimento,janelaLonga,janelaCurta,tipoInfo)
 
 #Para testes com getRentabilidadeLTN:
 tituloPublico <- "Tesouro Prefixado"
-dataVencimento <- "01/01/2019"
-dataCompra <- "10/08/2016"
+dataVencimento <- "2019-01-01"
+dataCompra <- "2016-08-10"
 valorInvestido <- 1000
 saida <- rtesourodescomplicado::getRentabilidadeLTN(dataCompra = dataCompra,dataVencimento = dataVencimento, valorInvestido = valorInvestido)
 
+[1] "Tesouro IPCA+"
+[1] "2019-05-15"
+[1] 26
+[1] 12
+[1] "Taxa.Compra.Manha"
+[1] "2016-11-26"
+[1] "2015-01-01
