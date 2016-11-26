@@ -4,26 +4,29 @@
 \alias{getRentabilidadeLFT}
 \title{get Valor Rentabilidade Tesouro Selic (LFT)}
 \usage{
-getRentabilidadeLFT(dataCompra, tituloPublico, dataVencimento, valorInvestido,
-  txAdmBanco, txSelic)
+getRentabilidadeLFT(dataCompra, tituloPublico = "Tesouro Selic",
+  dataVencimento, valorInvestido, txAdmBanco = 0.1/100,
+  txCustodia = 0.3/100, txSelic = 0.11)
 }
 \arguments{
-\item{:}{dataCompra: Data da Compra do titulo no formato YYYY-MM-DD}
+\item{dataCompra:}{Data da Compra do titulo no formato dd/mm/yyyy}
 
-\item{:}{tituloPublico: Nome do Titulo Publico}
+\item{tituloPublico:}{Nome do Titulo Publico}
 
-\item{:}{dataVencimento: Data de Vencimento do titulo no formato YYYY-MM-DD}
+\item{dataVencimento:}{Data de Vencimento do titulo no formato dd/mm/yyyy}
 
-\item{:}{valorInvestido: Valor total investido no periodo}
+\item{valorInvestido:}{Valor total investido no periodo}
 
-\item{:}{txAdmBanco: taxa de administracao do banco ou financeira}
+\item{txAdmBanco:}{taxa de administracao do banco ou financeira}
 
-\item{:}{txSelic: taxa selic para periodo}
+\item{txCustodia:}{Taxa de Custodia (por padrao 0.3%)}
+
+\item{txSelic:}{taxa selic para periodo}
 }
 \description{
 Funcao para calcular previsão de rentabilidade de titulo LFT
 }
 \author{
-Rodrigo Almeida - rodrigo.almeida@gmail.com
+Rodrigo Almeida <rodrigo.almeida@gmail.com>
 }
 

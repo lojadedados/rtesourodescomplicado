@@ -3,11 +3,17 @@
 # Para criar um grafico: Copiar e colar as linhas abaixo no console
 
 precotaxatesourodireto <- read.csv2("data/precotaxatesourodireto.csv", sep = ",")
-janelaCurta = 10
-janelaLonga = 100
+janelaCurta = 12
+janelaLonga = 26
 tipoInfo = "PU.Base.Manha"
 tituloPublico <- "Tesouro IPCA+"
 dataVencimento <- "15/08/2024"
 getGrafico(tituloPublico,dataVencimento,janelaLonga,janelaCurta,tipoInfo)
 
+#Para testes com getRentabilidadeLTN:
+tituloPublico <- "Tesouro Prefixado"
+dataVencimento <- "01/01/2019"
+dataCompra <- "10/08/2016"
+valorInvestido <- 1000
+saida <- rtesourodescomplicado::getRentabilidadeLTN(dataCompra = dataCompra,dataVencimento = dataVencimento, valorInvestido = valorInvestido)
 

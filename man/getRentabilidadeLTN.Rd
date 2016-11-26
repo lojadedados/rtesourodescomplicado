@@ -4,24 +4,29 @@
 \alias{getRentabilidadeLTN}
 \title{get Valor Rentabilidade Tesouro Prefixado (LTN)}
 \usage{
-getRentabilidadeLTN(dataCompra, tituloPublico, dataVencimento, valorInvestido,
-  txAdmBanco)
+getRentabilidadeLTN(dataCompra, tituloPublico = "Tesouro Prefixado",
+  dataVencimento, valorInvestido, txAdmBanco = 0.1/100,
+  txCustodia = 0.3/100, txAdministracaoEntrada = 1)
 }
 \arguments{
-\item{:}{dataCompra: Data da Compra do titulo no formato YYYY-MM-DD}
+\item{dataCompra:}{Data da Compra do titulo no formato dd/mm/yyyy}
 
-\item{:}{tituloPublico: Nome do Titulo Publico}
+\item{tituloPublico:}{Nome do Titulo Publico (Tesouro Prefixado)}
 
-\item{:}{dataVencimento: Data de Vencimento do titulo no formato YYYY-MM-DD}
+\item{dataVencimento:}{Data de Vencimento do titulo no formato dd/mm/yyyy}
 
-\item{:}{valorInvestido: Valor total investido no periodo}
+\item{valorInvestido:}{Valor total investido no periodo}
 
-\item{:}{txAdmBanco: taxa de administracao do banco ou financeira para o periodo (%a.a)}
+\item{txAdmBanco:}{taxa de administracao do banco ou financeira para o periodo (%a.a) (por padrao 0.1%)}
+
+\item{txCustodia:}{Taxa de Custodia (por padrao 0.3%)}
+
+\item{txAdministracaoEntrada:}{Taxa de Administracao na Entrada do Investimento}
 }
 \description{
-Funcao para calcular previsão de rentabilidade de titulo LTN
+Funcao para calcular previsao de rentabilidade de titulo LTN
 }
 \author{
-Rodrigo Almeida - rodrigo.almeida@gmail.com
+Rodrigo Almeida <rodrigo.almeida@gmail.com>
 }
 

@@ -6,10 +6,10 @@
 #' @description Retorna data.frame com as datas de vencimento dos papeis LFT, LTN, NTN-F, NTN-B Principal, NTN-B, NTN-C
 #' @export
 #' @usage retorna planilha do tesouro direto
-# dados do tesouro lidos através de s  <- read.csv2("data/precotaxatesourodireto.csv")
+# dados do tesouro lidos atrav?s de s  <- read.csv2("data/precotaxatesourodireto.csv")
 getVencimentosTitulosPublicos <- function(titulo = 'Tesouro IPCA+')  {
   precotaxatesourodireto <-  getData()
   vencimentosTitulosPublicos <- precotaxatesourodireto %>% filter(precotaxatesourodireto$Tipo.Titulo == titulo)
-  vencimentosTitulosPublicos$Data.Vencimento <- droplevels(vencimentosTitulosPublicos$Data.Vencimento)
+  vencimentosTitulosPublicos$Data.Vencimento <- droplevels(as.factor(vencimentosTitulosPublicos$Data.Vencimento))
   as.array(levels(vencimentosTitulosPublicos$Data.Vencimento))
 }

@@ -7,6 +7,8 @@ test_that("Testando o metodo getVencimentosTitulosPublicos", {
   if (!file.exists('data/precotaxatesourodireto.csv')) {
     updateData()
   }
+
+
   # Verifica a existencia de 9 colunas no arquivo
   expect_equal(length(getVencimentosTitulosPublicos()),4)
 

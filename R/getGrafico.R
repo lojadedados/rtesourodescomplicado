@@ -15,6 +15,8 @@ getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, 
         # recupera a informacao
         precotaxatesourodireto <- getData()
 
+        # padronizando o uso das datas como asDate
+        dataVencimento <- as.Date(dataVencimento, format = "%d/%m/%Y")
 
         # data inferior de referencia para range do eixo X (por padrao 01/01/2015)
         dtLimiteInferior <- as.Date(dataLimiteInferiorEixoX, format = "%d/%m/%Y")
@@ -22,11 +24,11 @@ getGrafico <- function(tituloPublico, dataVencimento, janelaLonga, janelaCurta, 
         # data superior de referencia para range do eixo X (por padrao 15/11/2016)
         dtLimiteSuperior <- as.Date(dataLimiteSuperiorEixoX, format = "%d/%m/%Y")
 
-
+        # as.Date(as.character(Data.Base), format = "%Y-%m-%d")
         #recupera o valor do titulo para toda a distribuicao
         titulo <- filter(precotaxatesourodireto, Tipo.Titulo == tituloPublico &
                              Data.Vencimento == dataVencimento &
-                             as.Date(as.character(Data.Base), format = "%Y-%m-%d") > dtLimiteInferior)
+                             Data.Base > dtLimiteInferior)
 
         # Informacao que sera plotada no grafico
         infoApresentada <- switch (tipoInfo,
