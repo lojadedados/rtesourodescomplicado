@@ -6,7 +6,12 @@
 #' @param infoApresentada: Um dos seguintes: Taxa.Compra.Manha, Taxa.Venda.Manha, PU.Compra.Manha, PU.Venda.Manha, PU.Base.Manha
 #' @param janelaLonga de avaliação da media movel exponencial
 #' @param janelaCurta de avaliação da media movel exponencial
-getXTSTD <- function(dataBase, infoApresentada, janelaLonga, janelaCurta) {
+getXTSTD <- function(dataBase,
+                     infoApresentada,
+                     janelaLonga,
+                     janelaCurta,
+                     MMECurta,
+                     MMELonga) {
 
   # Para o entendimento sobre medias moveis:
   # http://www.tororadar.com.br/investimento/analise-tecnica/medias-moveis
@@ -21,7 +26,19 @@ getXTSTD <- function(dataBase, infoApresentada, janelaLonga, janelaCurta) {
   EMALonga <- as.numeric(saidaEMALonga)
   EMACurta <- as.numeric(saidaEMACurta)
 
-  resultado <- data.frame(dataBase,Data.Apresentada,EMALonga,EMACurta)
+  resultado <- NULL
+  # TODO: Ajustar grafico para não apresentar MMEs
+  if (MMECurta && MMELonga) {
+    resultado <- data.frame(dataBase,Data.Apresentada,EMALonga,EMACurta)
+  } else if (MMECurta) {
+    resultado <- data.frame(dataBase,Data.Apresentada,EMACurta)
+  } else if (MMELonga) {
+    resultado <- data.frame(dataBase,Data.Apresentada,EMALonga)
+  } else {
+    resultado <- data.frame(dataBase,Data.Apresentada,EMALonga,EMACurta)
+  }
+
+
 
   saida <- xts(x = resultado[,-1], order.by = resultado[,1])
   saida

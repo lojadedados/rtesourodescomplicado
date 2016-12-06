@@ -13,8 +13,11 @@ test_that("Testando a recuperacao de Dados de Precos com o Metodo getGrafico", {
   tipoInfo = "PU.Base.Manha"
   tituloPublico <- "Tesouro IPCA+"
   dataVencimento <- "2024-08-15"
+  MMECurta = TRUE
+  MMELonga = TRUE
 
-  s <- getGrafico(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo)
+  s <- getGrafico(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo, dataLimiteInferiorEixoX = "2015-01-01",
+                  dataLimiteSuperiorEixoX = "2016-11-15", MMECurta, MMELonga)
 
   expect_equal(as.character(class(s))[1],"dygraphs")
 

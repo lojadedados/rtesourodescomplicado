@@ -8,7 +8,18 @@ janelaLonga = 26
 tipoInfo = "PU.Base.Manha"
 tituloPublico <- "Tesouro IPCA+"
 dataVencimento <- "2024-08-15"
-getGrafico(tituloPublico,dataVencimento,janelaLonga,janelaCurta,tipoInfo)
+MMECurta <- TRUE
+MMELonga <- TRUE
+dataLimiteInferiorEixoX = "2015-01-01"
+dataLimiteSuperiorEixoX = "2016-11-15"
+rtesourodescomplicado::getGrafico(tituloPublico,dataVencimento,
+janelaLonga,
+janelaCurta,
+tipoInfo,
+dataLimiteInferiorEixoX,
+dataLimiteSuperiorEixoX,
+MMECurta,
+MMELonga)
 
 #Para testes com getRentabilidadeLTN:
 tituloPublico <- "Tesouro Prefixado"

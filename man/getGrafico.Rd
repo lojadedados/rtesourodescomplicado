@@ -6,7 +6,7 @@
 \usage{
 getGrafico(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo,
   dataLimiteInferiorEixoX = "2015-01-01",
-  dataLimiteSuperiorEixoX = "2016-11-15")
+  dataLimiteSuperiorEixoX = "2016-11-15", MMECurta, MMELonga)
 }
 \arguments{
 \item{janelaLonga}{de avaliação da media movel exponencial}
@@ -22,6 +22,10 @@ getGrafico(tituloPublico, dataVencimento, janelaLonga, janelaCurta, tipoInfo,
 \item{dataLimiteInferiorEixoX:}{data Limite Inferior a ser apresentada no Eixo X (formato format = "%Y-%m-%d")}
 
 \item{dataLimiteSuperiorEixoX:}{data Limite Superior a ser apresentada no Eixo X (formato format = "%Y-%m-%d")}
+
+\item{MME12:}{Apresentar Media Movel de 12 dias}
+
+\item{MME26:}{Apresentar Media Movel de 26 dias}
 }
 \description{
 Funcao para geracao de grafico do Tesouro
