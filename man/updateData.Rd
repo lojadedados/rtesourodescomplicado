@@ -7,7 +7,7 @@
 updateData()
 }
 \description{
-Funcao para atualizar dados do tesouro direto que estao na pasta data com o nome 'precotaxatesourodireto.csv'
+Funcao para atualizar dados do tesouro direto que estao na pasta data
 }
 \author{
 Rodrigo Almeida - rodrigo@lojadedados.com.br

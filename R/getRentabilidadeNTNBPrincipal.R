@@ -1,13 +1,13 @@
 #' @title get Valor Rentabilidade Tesouro IPCA  (NTN-B Principal)
 #' @description Funcao para calcular previsão de rentabilidade de titulo NTN-B Principal
 #' @author Rodrigo Almeida <rodrigo.almeida@gmail.com>
-#' @param dataCompra: Data da Compra do titulo no formato dd/mm/yyyy
-#' @param tituloPublico: Nome do Titulo Publico
-#' @param dataVencimento: Data de Vencimento do titulo no formato dd/mm/yyyy
-#' @param valorInvestido: Valor total investido no periodo
-#' @param txAdmBanco: taxa de administracao do banco ou financeira
-#' @param txCustodia: Taxa de Custodia (por padrao 0.3%)
-#' @param txInflacaoIPCA: taxa Inflacao para periodo
+#' @param dataCompra Data da Compra do titulo no formato dd/mm/yyyy
+#' @param tituloPublico Nome do Titulo Publico
+#' @param dataVencimento Data de Vencimento do titulo no formato dd/mm/yyyy
+#' @param valorInvestido Valor total investido no periodo
+#' @param txAdmBanco taxa de administracao do banco ou financeira
+#' @param txCustodia Taxa de Custodia (por padrao 0.3%)
+#' @param txInflacaoIPCA taxa Inflacao para periodo
 #' @export
 getRentabilidadeNTNBPrincipal <- function(dataCompra,
                                           tituloPublico = "Tesouro IPCA+",

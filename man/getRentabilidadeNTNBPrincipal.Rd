@@ -9,19 +9,19 @@ getRentabilidadeNTNBPrincipal(dataCompra, tituloPublico = "Tesouro IPCA+",
   txCustodia = 0.3/100, txInflacaoIPCA = 6/100)
 }
 \arguments{
-\item{dataCompra:}{Data da Compra do titulo no formato dd/mm/yyyy}
+\item{dataCompra}{Data da Compra do titulo no formato dd/mm/yyyy}
 
-\item{tituloPublico:}{Nome do Titulo Publico}
+\item{tituloPublico}{Nome do Titulo Publico}
 
-\item{dataVencimento:}{Data de Vencimento do titulo no formato dd/mm/yyyy}
+\item{dataVencimento}{Data de Vencimento do titulo no formato dd/mm/yyyy}
 
-\item{valorInvestido:}{Valor total investido no periodo}
+\item{valorInvestido}{Valor total investido no periodo}
 
-\item{txAdmBanco:}{taxa de administracao do banco ou financeira}
+\item{txAdmBanco}{taxa de administracao do banco ou financeira}
 
-\item{txCustodia:}{Taxa de Custodia (por padrao 0.3%)}
+\item{txCustodia}{Taxa de Custodia (por padrao 0.3%)}
 
-\item{txInflacaoIPCA:}{taxa Inflacao para periodo}
+\item{txInflacaoIPCA}{taxa Inflacao para periodo}
 }
 \description{
 Funcao para calcular previsão de rentabilidade de titulo NTN-B Principal

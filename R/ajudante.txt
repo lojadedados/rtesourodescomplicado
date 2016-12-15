@@ -22,11 +22,16 @@ MMECurta,
 MMELonga)
 
 #Para testes com getRentabilidadeLTN:
-tituloPublico <- "Tesouro Prefixado"
-dataVencimento <- "2019-01-01"
-dataCompra <- "2016-08-10"
-valorInvestido <- 1000
+tituloPublico <- "Tesouro IPCA+"
+dataVencimento <- "15/05/2035"
+dataCompra <- "09/12/2016"
+valorInvestido <- 100000
 saida <- rtesourodescomplicado::getRentabilidadeLTN(dataCompra = dataCompra,dataVencimento = dataVencimento, valorInvestido = valorInvestido)
+
+saida <- rtesourodescomplicado::getRentabilidadeNTNBPrincipal(dataCompra = dataCompra,dataVencimento = dataVencimento, valorInvestido = valorInvestido)
+
+
+
 
 [1] "Tesouro IPCA+"
 [1] "2019-05-15"
@@ -35,3 +40,5 @@ saida <- rtesourodescomplicado::getRentabilidadeLTN(dataCompra = dataCompra,data
 [1] "Taxa.Compra.Manha"
 [1] "2016-11-26"
 [1] "2015-01-01
+
+
